@@ -36,14 +36,14 @@ def main():
         batch_size = args.batch_size
 
         train_dataset = datasets.CIFAR10(
-            root='./mini_dataset',
+            root='./cifar10',
             train=True,
             download=True,
             transform=script_utils.get_transform(),
         )
 
         test_dataset = datasets.CIFAR10(
-            root='./mini_dataset',
+            root='./cifar10',
             train=False,
             download=True,
             transform=script_utils.get_transform(),
@@ -141,7 +141,7 @@ def create_argparser():
         log_to_wandb=True,
         log_rate=1000,
         checkpoint_rate=1000,
-        log_dir="./ddpm_logs",
+        log_dir="diffusion models/DDPM/log_dir",
         project_name="DDPM MNIST",
         run_name=run_name,
 
